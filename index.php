@@ -3,10 +3,12 @@ require 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+if (file_exists(__DIR__ . '/.env')) {
+    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
 
-$apiKey = $_ENV['NASA_API_KEY']; 
+$apiKey = $_ENV['NASA_API_KEY'] ?? getenv('NASA_API_KEY');
 $date = $_GET['date'] ?? date('Y-m-d');
 
 $url = "https://api.nasa.gov/planetary/apod?api_key=$apiKey&date=$date&thumbs=true";
