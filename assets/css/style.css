@@ -124,7 +124,6 @@ body {
   background: #ffdb7d; 
 }
 
-/* DESCRIPTION */
 .description {
   font-size: 14px;
   line-height: 1.7;
@@ -140,7 +139,6 @@ body {
   -webkit-mask-image: linear-gradient(180deg, #fff 50%, transparent);
 }
 
-/* TOGGLE BUTTON */
 .toggle-desc {
   margin-top: 12px;
   background: none;
